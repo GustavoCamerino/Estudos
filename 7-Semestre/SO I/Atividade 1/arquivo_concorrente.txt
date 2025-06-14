@@ -1,0 +1,10 @@
+Mensagem do PAI (PID: 6210).
+Mensagem do FILHO (PID: 6211).
+Mensagem do FILHO (PID: 6211).
+Mensagem do PAI (PID: 6210).
+Mensagem do FILHO (PID: 6211).
+Mensagem do PAI (PID: 6210).
+Mensagem do FILHO (PID: 6211).
+Mensagem do FILHO (PID: 6211).
+Mensagem do PAI (PID: 6210).
+Mensagem do PAI (PID: 6210).

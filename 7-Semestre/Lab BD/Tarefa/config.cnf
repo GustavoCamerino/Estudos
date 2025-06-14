@@ -1,0 +1,5 @@
+[client]
+host = localhost
+user = root
+password = Ronca100.
+database= Catalo_Livros

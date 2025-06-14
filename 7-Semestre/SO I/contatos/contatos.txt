@@ -1,0 +1,10 @@
+a | 44
+Felipe | 111
+Fernando | 777
+Gabriel | 333
+Gustavo | 999
+k | 124
+Maria | 666
+p | 5
+Pablo | 222
+Ricardo | 444

@@ -1,0 +1,189 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\geometry{margin=2cm}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue
+}
+
+\begin{document}
+
+\title{\textbf{Sistemas Operacionais: Resumo Fácil para Estudo}}
+\author{}
+\date{}
+\maketitle
+
+\section*{O que é um Sistema Operacional?}
+
+Um \textbf{sistema operacional (SO)} é o programa principal de um computador. Ele funciona como um \textit{gerente} que organiza o hardware (como CPU e memória) e os programas (como aplicativos). Ele faz tudo funcionar junto, permitindo que você use vários aplicativos ao mesmo tempo de forma segura e eficiente.
+
+Por exemplo, no \textbf{Linux}, você pode usar um navegador, um editor de texto e um player de música ao mesmo tempo, e o SO garante que cada um tenha os recursos necessários.
+
+\section*{Resumo Rápido: O que o SO faz?}
+
+\begin{itemize}[label=$\bullet$]
+    \item \textcolor{blue}{Gerencia programas}: Executa vários aplicativos ao mesmo tempo (ex.: Linux rodando múltiplos apps).
+    \item \textcolor{blue}{Controla o hardware}: Faz CPU, memória e dispositivos como teclado funcionarem.
+    \item \textcolor{blue}{Organiza a memória}: Usa técnicas como paginação para alocar espaço.
+    \item \textcolor{blue}{Evita conflitos}: Usa semáforos para controlar acesso a recursos compartilhados.
+    \item \textcolor{blue}{Escalona a CPU}: Decide quem usa o processador (ex.: Round-Robin dá 10ms por processo).
+    \item \textcolor{blue}{Gerencia arquivos}: Organiza dados em sistemas como FAT32 ou NTFS.
+    \item \textcolor{blue}{Oferece segurança}: Usa permissões como ``somente leitura''.
+    \item \textcolor{blue}{Suporta virtualização}: Roda vários SOs em uma máquina (ex.: VMware).
+\end{itemize}
+
+\section*{Detalhes para Estudo Fácil}
+
+Aqui estão os principais conceitos explicados de forma simples, com exemplos práticos para entender cada tópico.
+
+\subsection*{1. Funções do Sistema Operacional}
+
+O SO gerencia:
+
+\begin{itemize}
+    \item \textbf{Processos}: Programas em execução, como abrir um navegador.
+    \item \textbf{Memória}: Espaço para os programas guardarem dados.
+    \item \textbf{Dispositivos}: Teclado, mouse, disco, etc.
+    \item \textbf{Arquivos}: Organização de dados no disco.
+
+    \item[] \textit{Exemplo}: No Linux, o SO deixa você usar um editor de texto e um jogo ao mesmo tempo, dividindo os recursos do computador.
+\end{itemize}
+
+\subsection*{2. Chamadas de Sistema (System Calls)}
+
+As chamadas de sistema são como \textit{pedidos} que os programas fazem ao SO para usar o hardware ou realizar tarefas.
+
+\begin{itemize}
+    \item \textbf{Exemplo}: A chamada \texttt{fork()} no Linux cria um novo processo, como quando um servidor web atende vários usuários ao mesmo tempo.
+    \item Outras chamadas: \texttt{read()} (ler arquivos) e \texttt{write()} (escrever arquivos).
+\end{itemize}
+
+\subsection*{3. Hardware e Software}
+
+O SO conecta o hardware (CPU, memória, disco) aos programas. Ele:
+
+\begin{itemize}
+    \item Gerencia a CPU para que todos os programas tenham sua vez.
+    \item Organiza a memória para evitar que programas se atrapalhem.
+    \item Lida com \textbf{interrupções}, como cliques do mouse.
+
+    \item[] \textit{Exemplo}: Quando você clica no mouse, o SO envia o comando para o programa certo, como um jogo.
+\end{itemize}
+
+\subsection*{4. Processos e Threads}
+
+\begin{itemize}
+    \item \textbf{Processos}: São programas rodando, cada um com sua memória. Ex.: Um navegador é um processo separado de um editor de texto.
+    \item \textbf{Threads}: São partes de um processo que compartilham memória. Ex.: Um editor de texto usa uma \textit{thread} para mostrar texto e outra para salvar automaticamente.
+\end{itemize}
+
+\subsection*{5. Comunicação e Sincronização}
+
+Quando vários processos tentam usar o mesmo recurso (como um arquivo), pode haver confusão (\textit{condição de corrida}). O SO usa \textbf{semáforos} para controlar o acesso.
+
+\begin{itemize}
+    \item \textit{Exemplo}: Um semáforo binário é como uma tranca: só um processo usa o recurso por vez, como um banco de dados atualizado por um único usuário de cada vez.
+\end{itemize}
+
+\subsection*{6. Escalonamento de CPU}
+
+O SO decide quem usa a CPU com algoritmos como \textbf{Round-Robin}, que dá um tempo fixo (ex.: 10ms) para cada processo.
+
+\begin{itemize}
+    \item \textbf{Fórmula do tempo de espera}:
+    \[
+    \text{Tempo de Espera} = \text{Tempo de Chegada} + \text{Tempo de Execução dos Processos Anteriores}
+    \]
+    
+    \item[] \textit{Exemplo}: Se dois processos gastam 20ms cada e um terceiro chega às 0s, ele espera 40ms.
+\end{itemize}
+
+\subsection*{7. Gerenciamento de Memória}
+
+O SO organiza a memória com \textbf{paginação}, dividindo-a em blocos de 4KB. Isso economiza espaço e usa \textit{memória virtual} (disco) se a RAM acabar.
+
+\begin{itemize}
+    \item \textit{Exemplo}: Um programa precisa de 16MB, mas só há 8MB na RAM. O SO usa o disco para ``emprestar'' memória.
+\end{itemize}
+
+\subsection*{8. Gerenciamento de Entrada/Saída}
+
+O SO controla dispositivos como teclados e discos, evitando conflitos.
+
+\begin{itemize}
+    \item \textit{Exemplo}: Se dois programas querem ler um disco, o SO organiza a ordem para não haver atrasos.
+\end{itemize}
+
+\subsection*{9. Sistemas de Arquivos}
+
+Sistemas como \textbf{FAT32} (para USBs) ou \textbf{NTFS} (para Windows) organizam arquivos em blocos de 4KB.
+
+\begin{itemize}
+    \item \textit{Exemplo}: Um arquivo de 10MB é dividido em 2.500 blocos de 4KB, e o SO sabe onde cada um está.
+\end{itemize}
+
+\subsection*{10. Virtualização}
+
+Permite rodar vários SOs em uma máquina com um \textit{hypervisor} (ex.: VMware).
+
+\begin{itemize}
+    \item \textit{Exemplo}: Uma empresa roda Linux e Windows na mesma máquina para diferentes tarefas, como servidor e e-mail.
+\end{itemize}
+
+\subsection*{11. Segurança e Permissões}
+
+O SO protege arquivos com permissões (ler, escrever, executar).
+
+\begin{itemize}
+    \item \textit{Exemplo}: Um usuário com permissão ``somente leitura'' pode ver, mas não alterar, um arquivo.
+    \item Usa senhas e \textit{firewalls} para bloquear ameaças.
+\end{itemize}
+
+\section*{Tabela Resumo: Funções do SO}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|p{5cm}|p{4cm}|}
+\hline
+\textbf{Função} & \textbf{O que faz?} & \textbf{Exemplo} \\
+\hline
+Processos & Roda programas & Linux com navegador e editor \\
+Chamadas de Sistema & Conecta programas ao hardware & \texttt{fork()} cria processos \\
+Memória & Organiza espaço para programas & Páginas de 4KB \\
+CPU & Decide quem usa o processador & Round-Robin dá 10ms por processo \\
+Sincronização & Evita conflitos & Semáforo trava acesso a arquivo \\
+Entrada/Saída & Gerencia discos e teclados & Organiza leitura de disco \\
+Arquivos & Organiza dados & Arquivo de 10MB em blocos \\
+Virtualização & Roda vários SOs & VMware com Linux e Windows \\
+Segurança & Controla permissões & Usuário só lê arquivo \\
+\hline
+\end{tabular}
+\caption{Resumo das funções do sistema operacional}
+\end{table}
+
+\section*{Conclusão}
+
+O sistema operacional é o coração do computador, gerenciando tudo: programas, memória, dispositivos e segurança. Ele usa técnicas como paginação, Round-Robin e semáforos para ser eficiente. Exemplos como Linux e VMware mostram como isso funciona na prática, tornando os computadores fáceis de usar e seguros.
+
+\section*{Referências}
+
+\begin{itemize}
+    \item \href{https://edu.gcfglobal.org/en/computerbasics/understanding-operating-systems/1/}{Computer Basics: Understanding Operating Systems}
+    \item \href{https://en.wikipedia.org/wiki/Operating_system}{Operating System -- Wikipedia}
+    \item \href{https://www.geeksforgeeks.org/what-is-an-operating-system/}{What is an Operating System -- GeeksforGeeks}
+    \item \href{https://www.techtarget.com/whatis/definition/operating-system-OS}{Operating System Definition -- TechTarget}
+    \item \href{https://www.ibm.com/think/topics/operating-systems}{What is an Operating System -- IBM}
+\end{itemize}
+
+\end{document}

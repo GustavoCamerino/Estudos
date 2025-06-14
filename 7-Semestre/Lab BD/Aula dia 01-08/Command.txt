@@ -1,0 +1,19 @@
+USE Catalo_Livros;
+DELIMITER //
+
+CREATE FUNCTION conta_livro_por_editor(nome_editora VARCHAR(400))
+RETURNS INT
+DETERMINISTIC
+BEGIN
+    DECLARE n INT;
+
+    -- Contar o número de livros associados à editora fornecida
+    SELECT COUNT(*) INTO n
+    FROM livro AS L
+    JOIN editora AS E ON L.editora_id = E.editora_id
+    WHERE E.editora_nome = nome_editora;
+
+    RETURN n;
+END //
+
+DELIMITER ;

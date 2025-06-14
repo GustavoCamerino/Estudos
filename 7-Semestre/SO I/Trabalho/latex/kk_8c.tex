@@ -1,0 +1,214 @@
+\hypertarget{kk_8c}{}\doxysection{kk.\+c File Reference}
+\label{kk_8c}\index{kk.c@{kk.c}}
+
+
+Trabalho 1 de Sistemas Operacionais.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/wait.\+h$>$}\newline
+{\ttfamily \#include $<$dirent.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+Include dependency graph for kk.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kk_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{kk_8c_a4dad7f4735932ecda16004266f3487e8}\label{kk_8c_a4dad7f4735932ecda16004266f3487e8}} 
+\#define \mbox{\hyperlink{kk_8c_a4dad7f4735932ecda16004266f3487e8}{TAM\+\_\+\+MAX\+\_\+\+CMD}}~1024
+\begin{DoxyCompactList}\small\item\em Tamanho máximo do comando. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{kk_8c_a3f1b39f330d03d6c8eeb3bfd978d91b8}\label{kk_8c_a3f1b39f330d03d6c8eeb3bfd978d91b8}} 
+\#define \mbox{\hyperlink{kk_8c_a3f1b39f330d03d6c8eeb3bfd978d91b8}{TAM\+\_\+\+MAX\+\_\+\+ARG}}~100
+\begin{DoxyCompactList}\small\item\em Número máximo de argumentos por comando. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{kk_8c_a2ef6663ecb63d7087872715ec851b198}\label{kk_8c_a2ef6663ecb63d7087872715ec851b198}} 
+\#define \mbox{\hyperlink{kk_8c_a2ef6663ecb63d7087872715ec851b198}{TAM\+\_\+\+CAMINHO}}~1024
+\begin{DoxyCompactList}\small\item\em Tamanho máximo do caminho. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{kk_8c_a84e476be488fde7f48fd827c99d59273}{executar\+\_\+comando}} (char $\ast$cmd)
+\begin{DoxyCompactList}\small\item\em Executa um comando, verificando se é um comando interno ou externo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{kk_8c_a6cda7f15df3efafa508cf54ead0fc729}{mudar\+\_\+diretorio}} (char $\ast$caminho)
+\begin{DoxyCompactList}\small\item\em Muda o diretório de trabalho atual. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{kk_8c_a8137d48c51da6b2ca76cf94db167c5a1}\label{kk_8c_a8137d48c51da6b2ca76cf94db167c5a1}} 
+void \mbox{\hyperlink{kk_8c_a8137d48c51da6b2ca76cf94db167c5a1}{imprimir\+\_\+diretorio\+\_\+atual}} ()
+\begin{DoxyCompactList}\small\item\em Imprime o diretório de trabalho atual. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{kk_8c_aa73c9f4cf0185fc7ad4741c8ac8d9480}{definir\+\_\+variavel\+\_\+caminho}} (char $\ast$nome, char $\ast$novo\+\_\+caminho)
+\begin{DoxyCompactList}\small\item\em Define a variável de caminho (CAMINHO). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{kk_8c_ac15025a0382d548b293f60f67a5146dd}{imprimir\+\_\+variavel\+\_\+caminho}} (char $\ast$nome)
+\begin{DoxyCompactList}\small\item\em Imprime o valor da variável de caminho (CAMINHO). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{kk_8c_a25d3895b200a77861c3aa45e65cd638e}{executar\+\_\+pipe}} (char $\ast$cmd1, char $\ast$cmd2)
+\begin{DoxyCompactList}\small\item\em Executa dois comandos conectados por um pipe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{kk_8c_a9c1d65013bfa9b5ae07e0dfeb741cbe5}{compilar\+\_\+e\+\_\+executar}} (char $\ast$nome\+\_\+prog)
+\begin{DoxyCompactList}\small\item\em Compila e executa um programa em C. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{kk_8c_ad55b5753077ca0f71c039048789bb367}{expandir\+\_\+variaveis}} (char $\ast$cmd)
+\begin{DoxyCompactList}\small\item\em Expande variáveis de ambiente no comando. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{kk_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Função principal do shell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{kk_8c_a861d7839c4666f25bc1b554cdd8839cd}\label{kk_8c_a861d7839c4666f25bc1b554cdd8839cd}} 
+char $\ast$ \mbox{\hyperlink{kk_8c_a861d7839c4666f25bc1b554cdd8839cd}{var\+\_\+caminho}} = NULL
+\begin{DoxyCompactList}\small\item\em Variável global para armazenar o caminho. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Trabalho 1 de Sistemas Operacionais. 
+
+\begin{DoxyAuthor}{Author}
+Gustavo Camerino 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2024-\/09-\/20
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2024 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{kk_8c_a9c1d65013bfa9b5ae07e0dfeb741cbe5}\label{kk_8c_a9c1d65013bfa9b5ae07e0dfeb741cbe5}} 
+\index{kk.c@{kk.c}!compilar\_e\_executar@{compilar\_e\_executar}}
+\index{compilar\_e\_executar@{compilar\_e\_executar}!kk.c@{kk.c}}
+\doxysubsubsection{\texorpdfstring{compilar\_e\_executar()}{compilar\_e\_executar()}}
+{\footnotesize\ttfamily void compilar\+\_\+e\+\_\+executar (\begin{DoxyParamCaption}\item[{char $\ast$}]{nome\+\_\+prog }\end{DoxyParamCaption})}
+
+
+
+Compila e executa um programa em C. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome\+\_\+prog} & O nome do programa a ser compilado e executado. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{kk_8c_aa73c9f4cf0185fc7ad4741c8ac8d9480}\label{kk_8c_aa73c9f4cf0185fc7ad4741c8ac8d9480}} 
+\index{kk.c@{kk.c}!definir\_variavel\_caminho@{definir\_variavel\_caminho}}
+\index{definir\_variavel\_caminho@{definir\_variavel\_caminho}!kk.c@{kk.c}}
+\doxysubsubsection{\texorpdfstring{definir\_variavel\_caminho()}{definir\_variavel\_caminho()}}
+{\footnotesize\ttfamily void definir\+\_\+variavel\+\_\+caminho (\begin{DoxyParamCaption}\item[{char $\ast$}]{nome,  }\item[{char $\ast$}]{novo\+\_\+caminho }\end{DoxyParamCaption})}
+
+
+
+Define a variável de caminho (CAMINHO). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & O nome da variável (deve ser \char`\"{}\+CAMINHO\char`\"{}). \\
+\hline
+{\em novo\+\_\+caminho} & O valor a ser atribuído à variável CAMINHO. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{kk_8c_a84e476be488fde7f48fd827c99d59273}\label{kk_8c_a84e476be488fde7f48fd827c99d59273}} 
+\index{kk.c@{kk.c}!executar\_comando@{executar\_comando}}
+\index{executar\_comando@{executar\_comando}!kk.c@{kk.c}}
+\doxysubsubsection{\texorpdfstring{executar\_comando()}{executar\_comando()}}
+{\footnotesize\ttfamily void executar\+\_\+comando (\begin{DoxyParamCaption}\item[{char $\ast$}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Executa um comando, verificando se é um comando interno ou externo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & O comando a ser executado. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{kk_8c_a25d3895b200a77861c3aa45e65cd638e}\label{kk_8c_a25d3895b200a77861c3aa45e65cd638e}} 
+\index{kk.c@{kk.c}!executar\_pipe@{executar\_pipe}}
+\index{executar\_pipe@{executar\_pipe}!kk.c@{kk.c}}
+\doxysubsubsection{\texorpdfstring{executar\_pipe()}{executar\_pipe()}}
+{\footnotesize\ttfamily void executar\+\_\+pipe (\begin{DoxyParamCaption}\item[{char $\ast$}]{cmd1,  }\item[{char $\ast$}]{cmd2 }\end{DoxyParamCaption})}
+
+
+
+Executa dois comandos conectados por um pipe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd1} & O primeiro comando. \\
+\hline
+{\em cmd2} & O segundo comando. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{kk_8c_ad55b5753077ca0f71c039048789bb367}\label{kk_8c_ad55b5753077ca0f71c039048789bb367}} 
+\index{kk.c@{kk.c}!expandir\_variaveis@{expandir\_variaveis}}
+\index{expandir\_variaveis@{expandir\_variaveis}!kk.c@{kk.c}}
+\doxysubsubsection{\texorpdfstring{expandir\_variaveis()}{expandir\_variaveis()}}
+{\footnotesize\ttfamily char $\ast$ expandir\+\_\+variaveis (\begin{DoxyParamCaption}\item[{char $\ast$}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Expande variáveis de ambiente no comando. 
+
+Substitui o valor de variáveis, como \$\+CAMINHO, com seus respectivos valores.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & O comando que pode conter variáveis a serem expandidas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O comando com as variáveis expandidas. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{kk_8c_ac15025a0382d548b293f60f67a5146dd}\label{kk_8c_ac15025a0382d548b293f60f67a5146dd}} 
+\index{kk.c@{kk.c}!imprimir\_variavel\_caminho@{imprimir\_variavel\_caminho}}
+\index{imprimir\_variavel\_caminho@{imprimir\_variavel\_caminho}!kk.c@{kk.c}}
+\doxysubsubsection{\texorpdfstring{imprimir\_variavel\_caminho()}{imprimir\_variavel\_caminho()}}
+{\footnotesize\ttfamily void imprimir\+\_\+variavel\+\_\+caminho (\begin{DoxyParamCaption}\item[{char $\ast$}]{nome }\end{DoxyParamCaption})}
+
+
+
+Imprime o valor da variável de caminho (CAMINHO). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & O nome da variável a ser impressa (deve ser \char`\"{}\+CAMINHO\char`\"{}). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{kk_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{kk_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{kk.c@{kk.c}!main@{main}}
+\index{main@{main}!kk.c@{kk.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função principal do shell. 
+
+Executa um loop para ler e executar comandos inseridos pelo usuário.
+
+\begin{DoxyReturn}{Returns}
+Retorna 0 ao terminar a execução. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{kk_8c_a6cda7f15df3efafa508cf54ead0fc729}\label{kk_8c_a6cda7f15df3efafa508cf54ead0fc729}} 
+\index{kk.c@{kk.c}!mudar\_diretorio@{mudar\_diretorio}}
+\index{mudar\_diretorio@{mudar\_diretorio}!kk.c@{kk.c}}
+\doxysubsubsection{\texorpdfstring{mudar\_diretorio()}{mudar\_diretorio()}}
+{\footnotesize\ttfamily void mudar\+\_\+diretorio (\begin{DoxyParamCaption}\item[{char $\ast$}]{caminho }\end{DoxyParamCaption})}
+
+
+
+Muda o diretório de trabalho atual. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em caminho} & O novo diretório a ser acessado. \\
+\hline
+\end{DoxyParams}

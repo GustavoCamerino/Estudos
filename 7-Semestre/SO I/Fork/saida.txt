@@ -1,0 +1,15 @@
+total 124
+-rw-rw-r-- 1 camerino camerino   271 ago 13 11:05 arquivos.c
+-rwxrwxr-x 1 camerino camerino 17536 ago  6 11:14 b
+-rw-rw-r-- 1 camerino camerino   249 ago  6 11:14 b.c
+drwxrwxr-x 3 camerino camerino  4096 ago 13 10:30 build
+-rwxrwxr-x 1 camerino camerino 16216 ago 13 10:42 novoproc1
+-rw-rw-r-- 1 camerino camerino   754 ago 13 10:43 novoproc1.c
+-rw-rw-r-- 1 camerino camerino   756 ago 13 11:05 novoproc2.c
+-rwxrwxr-x 1 camerino camerino 16296 ago 13 11:14 novoproc3
+-rw-rw-r-- 1 camerino camerino   715 ago 13 11:13 novoproc3.c
+-rwxrwxr-x 1 camerino camerino 17384 ago  6 10:29 pid
+-rw-rw-r-- 1 camerino camerino   107 ago  6 10:28 pid.c
+-rwxrwxr-x 1 camerino camerino 17520 ago  6 10:44 proc1
+-rw-rw-r-- 1 camerino camerino   438 ago  6 11:02 proc1.c
+-rw-r--r-- 1 camerino camerino     0 ago 13 11:14 saida.txt
