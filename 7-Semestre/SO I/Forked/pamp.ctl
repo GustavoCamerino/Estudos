@@ -1,1 +1,0 @@
-/usr/lib/paml/data/pamp.ctl

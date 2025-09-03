@@ -1,0 +1,10 @@
+Q1: Tell me about a time you didn't get along with a coworker
+Q2: Why did you leave your previous job
+Q3: Tell me about yourself
+Q4: Why should we hire you
+Q5: Give us an understanding of the role
+Q6: What do you know about our company
+Q7: What do you do when you're not working
+Q8: Where do you see yourself in 5 years
+Q9: Describe a situation where you were part of a failed project
+Q10: What's your greatest weakness

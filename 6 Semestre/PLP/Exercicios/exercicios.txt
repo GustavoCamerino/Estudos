@@ -1,0 +1,41 @@
+Aluno: Gustavo Camerino de Carvalho
+RGA: 202211722035
+
+1) Resposta
+
+<Num> → <Num><digit> | <digit>
+<digit> →0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 
+
+Derivação mais à direita para o inteiro 4520
+
+<Num>
+=> <Num> <digit>
+=> <Num> 0
+=> <Num> 2 0
+=> <Num> 5 2 0
+=> 4 5 2 0
+
+2) Resposta
+
+       Para dar precedência ao + sobre * à direita
+       <assign> → <id> = <expr>
+       <id> → A | B | C
+       <expr> → <term> + <expr> | <term>
+       <term> → <factor> * <term> | <factor>
+       <factor> → (<expr>) | <id>
+
+3) Resposta
+
+       Para adicionar os operadores unários ++ e --
+       <assign> → <id> = <expr>
+       <id> → A | B | C
+       <expr> → <term> + <expr> | <term>
+       <term> → <factor> * <term> | <factor>
+       <factor> → (<expr>) | <id> | ++ <id> | -- <id>
+
+
+4) Resposta
+
+<assign> → <id> = <expr> 
+<id> → A|B|C
+<expr> → <id> + <expr> | <id> * <expr> | (<expr>) | <id> 

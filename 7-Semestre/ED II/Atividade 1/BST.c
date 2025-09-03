@@ -1,20 +1,42 @@
+/**
+ * @file arvore_binaria.c
+ * @brief Implementação de uma Árvore Binária de Busca com visualização hierárquica e altura dos nós.
+ *
+ * Este código implementa uma estrutura de árvore binária que armazena strings, com inserção,
+ * busca e visualização formatada. Cada nó mantém sua altura para futuras possíveis extensões,
+ * como balanceamento AVL.
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
+/**
+ * @struct No
+ * @brief Estrutura que representa um nó da árvore binária.
+ */
 typedef struct No
 {
-    char str[250];
-    struct No *esq;
-    struct No *dir;
+    char str[250];  /**< String armazenada no nó */
+    struct No *esq; /**< Ponteiro para o filho à esquerda */
+    struct No *dir; /**< Ponteiro para o filho à direita */
+    int altura;     /**< Altura do nó na árvore */
 } No;
 
-//  Prototipos
+// ==== Protótipos ====
+
 No *CriaNo(const char *str);
 No *InsereNo(No *raiz, const char *str);
 No *BuscaNo(No *raiz, const char *str);
 void printBonito(No *raiz, int nivel);
+int altura(No *no);
+int max(int a, int b);
 
+// ==== Função principal ====
+
+/**
+ * @brief Função principal que testa a árvore com inserções e imprime sua estrutura.
+ */
 int main()
 {
     No *raiz = NULL;
@@ -31,6 +53,14 @@ int main()
     return 0;
 }
 
+// ==== Implementações ====
+
+/**
+ * @brief Cria um novo nó com a string fornecida.
+ *
+ * @param str String a ser armazenada.
+ * @return Ponteiro para o novo nó criado.
+ */
 No *CriaNo(const char *str)
 {
     if (str == NULL || strlen(str) == 0)
@@ -46,12 +76,20 @@ No *CriaNo(const char *str)
         exit(1);
     }
 
-    strcpy(novoNo->str, str); // Copiando a string corretamente
+    strcpy(novoNo->str, str);
     novoNo->esq = NULL;
     novoNo->dir = NULL;
+    novoNo->altura = 1; // Considerando altura inicial como 1 (folha)
     return novoNo;
 }
 
+/**
+ * @brief Insere uma string na árvore binária de forma ordenada.
+ *
+ * @param raiz Ponteiro para a raiz atual da árvore.
+ * @param str String a ser inserida.
+ * @return Ponteiro para a nova raiz após a inserção.
+ */
 No *InsereNo(No *raiz, const char *str)
 {
     if (raiz == NULL)
@@ -75,11 +113,21 @@ No *InsereNo(No *raiz, const char *str)
     }
     else
     {
-        printf("-- Valor %s já existe na àrvore\n", str);
+        printf("-- Valor %s já existe na árvore\n", str);
     }
+
+    // Atualiza a altura após inserção
+    raiz->altura = 1 + max(altura(raiz->esq), altura(raiz->dir));
     return raiz;
 }
 
+/**
+ * @brief Busca uma string na árvore binária.
+ *
+ * @param raiz Ponteiro para a raiz da árvore.
+ * @param str String a ser buscada.
+ * @return Ponteiro para o nó que contém a string, ou NULL se não encontrado.
+ */
 No *BuscaNo(No *raiz, const char *str)
 {
     if (raiz == NULL)
@@ -103,21 +151,49 @@ No *BuscaNo(No *raiz, const char *str)
     }
 }
 
+/**
+ * @brief Imprime a árvore de forma hierárquica e visualmente organizada.
+ *
+ * @param raiz Ponteiro para a raiz da árvore.
+ * @param nivel Nível atual de profundidade (usado para indentação).
+ */
 void printBonito(No *raiz, int nivel)
 {
     if (raiz == NULL)
         return;
 
-    // Primeiro, imprime a subárvore direita (vai para o topo visualmente)
     printBonito(raiz->dir, nivel + 1);
 
-    // Indenta de acordo com o nível atual
     for (int i = 0; i < nivel; i++)
-        printf("       "); // 7 espaços para alinhamento visual
+        printf("       ");
 
-    // Imprime o conteúdo do nó
     printf("└── %s\n", raiz->str);
 
-    // Depois, imprime a subárvore esquerda (vai para baixo visualmente)
     printBonito(raiz->esq, nivel + 1);
+}
+
+/**
+ * @brief Retorna a altura de um nó.
+ *
+ * @param no Ponteiro para o nó.
+ * @return Altura do nó ou 0 se o nó for NULL.
+ */
+int altura(No *no)
+{
+    if (no == NULL)
+        return 0;
+    else
+        return no->altura;
+}
+
+/**
+ * @brief Retorna o maior entre dois inteiros.
+ *
+ * @param a Primeiro valor.
+ * @param b Segundo valor.
+ * @return O maior valor entre a e b.
+ */
+int max(int a, int b)
+{
+    return (a > b) ? a : b;
 }

@@ -1,0 +1,10 @@
+				*Tarefa do dia*
+TSF = Type symbol table function
+1) Alterar a gramática para permitir a declaração de função;
+2) Elaborar a estrutura para armazenar a TSF
+   → Tipo
+   → ID
+   → Lista de parâmetros (tipo + ID)
+   → Quantidade de parâmetros
+3) Implementar a declaração de funções no sintático
+   → Imprima a TSF para se certificar que está correto

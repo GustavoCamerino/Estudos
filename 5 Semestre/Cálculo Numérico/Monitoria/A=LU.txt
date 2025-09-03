@@ -1,0 +1,10 @@
+Considere a matriz A dada por:
+
+	[ 2	 1	0 ]
+ A  =	[-4	 2	1 ]
+ 	[ 0	 4	2 ]
+
+Como delta¹ = |a11| 2 != 0, delta² = |a11	a12| = | 2  1| = 8 != 0, podemos escrever A = LU de forma única e seguindo os passos do Algoritmo 2.3:
+				     |a21	a22|   |-4  2|
+
+Resposta: 

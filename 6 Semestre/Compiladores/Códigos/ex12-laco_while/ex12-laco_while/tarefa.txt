@@ -1,0 +1,7 @@
+- Tarefa da Hora
+
+→ Ajustar a gramática para reconhecer a declaração de função
+→ Implementar o sintático para reconhecer a declaração de função
+	↓
+	→Implementar a tabela de símbolos das funções
+	- Lembre-se de registrar os parâmetros adequadamente

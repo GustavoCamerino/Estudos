@@ -1,0 +1,8 @@
+E→TE'
+E'→+TE'
+E'→Vazio
+T→FT'
+T'→*FT'
+T'→Vazio
+F→id
+F→(E)

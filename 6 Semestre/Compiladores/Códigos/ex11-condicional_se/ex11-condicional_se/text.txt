@@ -1,0 +1,12 @@
+int x;
+int y;
+read x;
+read y;
+if (x > 5 && y < 10) begin
+    write "x maior que 5 e y menor que 10";
+end else begin
+    write "condicao nao satisfeita";
+end
+if (x == y || y > 0) begin
+    write "x igual a y ou y maior que 0";
+end

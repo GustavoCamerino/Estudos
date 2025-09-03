@@ -1,0 +1,21 @@
+int main()
+{
+	int x,y,z;
+	y = func1(2,3);
+	z = func1(3,2);
+
+	return 0;
+}
+
+int func1(int a, int b)
+{
+	if(a>=b)
+	 return func2(a,b);
+	else
+	 return func2(b,a)
+}
+
+int func2 (int a, int b)
+{
+	return a-b;
+}
